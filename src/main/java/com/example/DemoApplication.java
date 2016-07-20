@@ -10,27 +10,27 @@ import org.apache.commons.io.IOUtils;
 
 public class DemoApplication {
 
-	public static void main(String[] args) {
-		String uCanUup = "UCanUup";
-		String uri ="http://106.75.28.160/UCloud.txt#rd?n";
-		URL url;
-		InputStream is = null;
-		try {
-			url = new URL( uri);
-			URLConnection urlcon;
-			urlcon = url.openConnection();
-			urlcon.connect();
-			is = urlcon.getInputStream();
-			String text = "~~~" + IOUtils.toString(is, "UTF-8") + "~~~";
-			System.out.println("'UCanUup'³öÏÖµÄ´ÎÊý: "+ Integer.toString(text.split(uCanUup).length -1));
-		} catch (MalformedURLException e) {
-		} catch (IOException e) {
-		} finally {
-			try {
-				if (is != null)
-					is.close();
-			} catch (IOException e) {
-			}
-		}
-	}
+    public static void main(String[] args) {
+        String uCanUup = "UCanUup";
+        String uri ="http://106.75.28.160/UCloud.txt#rd?n";
+        URL url;
+        InputStream is = null;
+        try {
+            url = new URL( uri);
+	    URLConnection urlcon;
+	    urlcon = url.openConnection();
+	    urlcon.connect();
+	    is = urlcon.getInputStream();
+	    String text = "~~~" + IOUtils.toString(is, "UTF-8") + "~~~";
+	    System.out.println("'UCanUup'å‡ºçŽ°çš„æ¬¡æ•°: "+ Integer.toString(text.split(uCanUup).length -1));
+	} catch (MalformedURLException e) {
+	} catch (IOException e) {
+	} finally {
+	    try {
+                if (is != null)
+		    is.close();
+	    } catch (IOException e) {
+	    }
+        }
+    }
 }
