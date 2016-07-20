@@ -17,20 +17,20 @@ public class DemoApplication {
         InputStream is = null;
         try {
             url = new URL( uri);
-	    URLConnection urlcon;
-	    urlcon = url.openConnection();
-	    urlcon.connect();
-	    is = urlcon.getInputStream();
-	    String text = "~~~" + IOUtils.toString(is, "UTF-8") + "~~~";
-	    System.out.println("'UCanUup'出现的次数: "+ Integer.toString(text.split(uCanUup).length -1));
-	} catch (MalformedURLException e) {
-	} catch (IOException e) {
-	} finally {
-	    try {
+            URLConnection urlcon;
+            urlcon = url.openConnection();
+            urlcon.connect();
+            is = urlcon.getInputStream();
+            String text = "~~~" + IOUtils.toString(is, "UTF-8") + "~~~";
+            System.out.println("'UCanUup'出现的次数: "+ Integer.toString(text.split(uCanUup).length -1));
+        } catch (MalformedURLException e) {
+        } catch (IOException e) {
+        } finally {
+            try {
                 if (is != null)
-		    is.close();
-	    } catch (IOException e) {
-	    }
+                    is.close();
+            } catch (IOException e) {
+            }
         }
     }
 }
